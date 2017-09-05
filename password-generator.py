@@ -18,15 +18,20 @@ def genpass():
 
 		print (prompt)
 		
-genpass()	
+		if prompt.upper() == "Y":	
+			genpass()
 		
-		
-		
-		
-		
-		
-if (prompt is 'Y'):	
-	genpass()
+		else:	
+			exit()
 	
-else:
-	print("finished")
+genpass()
+		
+#answer = raw_input("Is the information correct? Enter Y for yes or N for no")
+#if answer.upper() == 'Y':
+ #   print("this will do the calculation"):
+#else:
+ #   exit()
+		
+		
+		
+
