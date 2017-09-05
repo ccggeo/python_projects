@@ -15,10 +15,9 @@ def genpass():
 	
 		prompt = input("Repeat? [Y] or [N]")
 
-
 		print (prompt)
 		
-		if prompt.upper() == "Y":	
+		if prompt == "Y":	
 			genpass()
 		
 		else:	
@@ -26,12 +25,3 @@ def genpass():
 	
 genpass()
 		
-#answer = raw_input("Is the information correct? Enter Y for yes or N for no")
-#if answer.upper() == 'Y':
- #   print("this will do the calculation"):
-#else:
- #   exit()
-		
-		
-		
-
