@@ -16,12 +16,22 @@ def genpass():
 		prompt = input("Repeat? [Y] or [N]")
 
 		print (prompt)
+
+		def if_loop():
+			if prompt == "Y" or prompt == "y":	
+				genpass()
 		
-		if prompt == "Y":	
-			genpass()
-		
-		else:	
-			exit()
+			elif:
+				if prompt == "N" or prompt == "n":
+					print ("Exiting") 
+					exit()
+			
+			else:
+				if_loop()
+				
+	
+			
+			
 	
 genpass()
 		
