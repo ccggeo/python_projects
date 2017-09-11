@@ -6,3 +6,4 @@ toDir = "/Users/cgeorge/desktop/ISO"
 copy_tree(fromDir, toDir)
 
 
+#http://pythoncentral.io/how-to-movecopy-a-file-or-directory-folder-with-a-progress-bar-in-python/
