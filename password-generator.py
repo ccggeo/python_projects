@@ -12,26 +12,17 @@ def genpass():
 		for c in range(range_input):
 			password += random.choice(chars)
 		print (password)
-	
+
 		prompt = input("Repeat? [Y] or [N]")
 
 		print (prompt)
 
-		def if_loop():
-			if prompt == "Y" or prompt == "y":	
-				genpass()
-		
-			elif:
-				if prompt == "N" or prompt == "n":
-					print ("Exiting") 
+		if prompt == "Y" or prompt == "y":
+			genpass()
+
+		else:
+				if prompt == "n" or prompt == "N":
+					print("Exiting")
 					exit()
-			
-			else:
-				if_loop()
-				
-	
-			
-			
-	
+
 genpass()
-		
