@@ -1,4 +1,3 @@
-
 import urllib.request
 import json
 
@@ -14,6 +13,6 @@ position = data['iss_position']
 
 longitude = position['longitude']
 latitude = position['latitude']
+print('The latitudial position of the ISS is currently: ' + latitude)
 print('The longitudial position of the ISS is currently: ' + longitude )
-print('The longitudial position of the ISS is currently: ' + latitude)
 print('Timestamp: ' + timestamp)
