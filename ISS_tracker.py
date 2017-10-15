@@ -21,13 +21,10 @@ print('The longitudial position of the ISS is currently: ' + longitude )
 print('Timestamp: ' + timestamp)
 #time related to position?
 
-
 g = geocoder.google([latitude, longitude], method='reverse')
 city = str(g.city)
 
 if city == 'None':
     print('Over ocean. No data')
 else:
-    print(g.city)
-    print(g.state_long)
-    print(g.country_long)
+    print('ISS is over ' + g.state_long + ', ' + g.country_long + 'and the nearest city is ' + g.city)
