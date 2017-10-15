@@ -19,28 +19,31 @@ latitude = position['latitude']
 print('The latitudial position of the ISS is currently: ' + latitude)
 print('The longitudial position of the ISS is currently: ' + longitude )
 print('Timestamp: ' + timestamp)
-
-
-
-#http://www.geonames.org/export/web-services.html
-#https://stackoverflow.com/questions/19590584/how-to-find-which-ocean-a-coordinate-is-on
+#time related to position?
 
 
 g = geocoder.google([latitude, longitude], method='reverse')
-#print(g.country_long)
+city = str(g.city)
 
-g.city
-g.state
-g.state_long
-g.country
-g.country_long
+if city == 'None':
+    print('Over ocean. No data')
+else:
+    print(g.city)
+    print(g.state_long)
+    print(g.country_long)
 
 
 
 ###
-geonames = urllib2.urlopen('http://api.geonames.org/findNearbyPlaceNameJSON?lat=47.3&lng=9&username=iMHx3RncHX').read()
-_json_obj = str(geonames)
+#geonames = urllib2.urlopen('http://api.geonames.org/findNearbyPlaceNameJSON?lat=47.3&lng=9&username=iMHx3RncHX').read()
+#DATA = json.loads(geonames)
 
-_data = json.loads(_json_obj)
+#geonames2 = DATA['geonames']
 
-geonamesData = _data['geonames']
+#geonamesstr = str(geonames2)
+
+#print(DATA['geonames']['countryName'])
+
+#geonamesData = _data['geonames']
+
+#print(geonamesData)
