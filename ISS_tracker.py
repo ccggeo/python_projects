@@ -31,19 +31,3 @@ else:
     print(g.city)
     print(g.state_long)
     print(g.country_long)
-
-
-
-###
-#geonames = urllib2.urlopen('http://api.geonames.org/findNearbyPlaceNameJSON?lat=47.3&lng=9&username=iMHx3RncHX').read()
-#DATA = json.loads(geonames)
-
-#geonames2 = DATA['geonames']
-
-#geonamesstr = str(geonames2)
-
-#print(DATA['geonames']['countryName'])
-
-#geonamesData = _data['geonames']
-
-#print(geonamesData)
