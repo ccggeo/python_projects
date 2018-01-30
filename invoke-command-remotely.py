@@ -1,21 +1,13 @@
 #!/usr/bin/python
+import subprocess
+import sys
 
+def invokecommand(TARGET, USER, COMMAND):
 
-
-def invoke-command:
-
-    import subprocess
-    import sys
-
-
-
-    HOST=""
-    USER=raw_input(['USERNAME OF USER'])
-    #command to run on host
-
-    COMMAND=""
-
-    ssh = subprocess.Popen(["ssh", "%s" % HOST, COMMAND], shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    x = USER + "@" + TARGET
+        #command to run on host
+    #https://stackoverflow.com/questions/7468668/python-subprocess-readlines
+    ssh = subprocess.Popen(["ssh", "%s" % x, COMMAND], shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     result = ssh.stdout.readlines()
     if result == []:
@@ -24,5 +16,8 @@ def invoke-command:
     else:
         print result
 
+USER =  raw_input(['USERNAME OF USER'])
+TARGET = raw_input(['USERNAME OF Target'])
+COMMAND =  raw_input(['USERNAME OF Command'])
 
-invoke-command() 
+invokecommand(TARGET, USER, COMMAND) 
