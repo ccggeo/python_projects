@@ -1,6 +1,6 @@
 import csv
 
-with open('/Users/cgeorge/Documents/Book2.csv') as csvfile:
+with open('.csv') as csvfile:
     readCSV = csv.reader(csvfile, dialect=csv.excel_tab)
     row1 =[]
    
