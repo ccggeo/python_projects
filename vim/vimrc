@@ -1,0 +1,92 @@
+""f5 to execute
+nnoremap <silent> <F5> :!python %<CR>
+
+set nocompatible
+
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" This is the Vundle package, which can be found on GitHub.
+" For GitHub repos, you specify plugins using the
+" 'user/repository' format
+Plugin 'gmarik/vundle'
+
+" We could also add repositories with a ".git" extension
+
+" To get plugins from Vim Scripts, you can reference the plugin
+" by name as it appears on the site
+Plugin 'Buffergator'
+
+Plugin 'scrooloose/nerdtree'
+""F2 to open and close
+map <F2> :NERDTreeToggle<CR>
+
+Plugin 'valloric/YouCompleteMe'
+""You complete me config
+let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
+
+let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+""Ensure preview window does not open
+set completeopt-=preview
+" Goto definition with F3
+map <F3> :YcmCompleter GoTo<CR>
+
+
+Plugin 'vim-syntastic/syntastic'
+" Syntastic Configuration
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_enable_elixir_checker = 1
+" let g:syntastic_elixir_checkers = ["elixir"]
+
+Bundle 'klen/python-mode'
+"" Python mode config
+""Disable rope to avoid hanging
+let g:pymode_rope = 0 
+
+Plugin 'easymotion/vim-easymotion'
+
+Plugin 'Townk/vim-autoclose'
+
+" Theme / Interface
+Plugin 'AnsiEsc.vim'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'sjl/badwolf'
+Plugin 'tomasr/molokai'
+Plugin 'morhetz/gruvbox'
+Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+Plugin 'junegunn/limelight.vim'
+Plugin 'mkarmona/colorsbox'
+Plugin 'romainl/Apprentice'
+Plugin 'Lokaltog/vim-distinguished'
+Plugin 'chriskempson/base16-vim'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'AlessandroYorba/Sierra'
+Plugin 'daylerees/colour-schemes'
+Plugin 'effkay/argonaut.vim'
+Plugin 'ajh17/Spacegray.vim'
+Plugin 'atelierbram/Base2Tone-vim'
+Plugin 'colepeters/spacemacs-theme.vim'
+
+
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+let g:AutoClosePreserveDotReg = 0
+"""" END Vundle Configuration 
+
+
