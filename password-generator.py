@@ -13,7 +13,7 @@ def genpass():
 			password += random.choice(chars)
 		print (password)
 
-		prompt = input("Repeat? [Y] or [N]")
+		prompt = raw_input("Repeat? [Y] or [N]")
 
 		print (prompt)
 
