@@ -32,7 +32,7 @@ def main():
     print ("Use this form.\nExample: 06:30")
     Alarm = raw_input("> ")
     timevalidate(Alarm)
-    with open("i/tmp/YT.txt") as f:
+    with open("/tmp/YT.txt") as f:
         content = f.readlines()
     Time = time.strftime("%H:%M:%S")
 
