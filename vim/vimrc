@@ -1,11 +1,13 @@
 ""f5 to execute
 nnoremap <silent> <F5> :!python %<CR>
-
+colorscheme molokai
 set nocompatible
 
+""Vundle config start
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
 
 " This is the Vundle package, which can be found on GitHub.
 " For GitHub repos, you specify plugins using the
@@ -43,6 +45,7 @@ Plugin 'vim-syntastic/syntastic'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+:let g:syntastic_loc_list_height=5
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -55,33 +58,18 @@ Bundle 'klen/python-mode'
 "" Python mode config
 ""Disable rope to avoid hanging
 let g:pymode_rope = 0 
-
+let g:pymode_options_colorcolumn = 0
 Plugin 'easymotion/vim-easymotion'
 
 Plugin 'Townk/vim-autoclose'
+Plugin 'jakedouglas/exuberant-ctags'
+Plugin 'majutsushi/tagbar'
+""tagbar config
+""map to F8
+nmap <F8> :TagbarToggle<CR>
 
-" Theme / Interface
-Plugin 'AnsiEsc.vim'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'sjl/badwolf'
-Plugin 'tomasr/molokai'
-Plugin 'morhetz/gruvbox'
-Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-Plugin 'junegunn/limelight.vim'
-Plugin 'mkarmona/colorsbox'
-Plugin 'romainl/Apprentice'
-Plugin 'Lokaltog/vim-distinguished'
-Plugin 'chriskempson/base16-vim'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'AlessandroYorba/Sierra'
-Plugin 'daylerees/colour-schemes'
-Plugin 'effkay/argonaut.vim'
-Plugin 'ajh17/Spacegray.vim'
-Plugin 'atelierbram/Base2Tone-vim'
-Plugin 'colepeters/spacemacs-theme.vim'
-
+""Themes/Colourschemes
+Plugin 'flazz/vim-colorschemes'
 
 
 call vundle#end()            " required
