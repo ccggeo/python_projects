@@ -27,4 +27,4 @@ city = str(g.city)
 if city == 'None':
     print('Over ocean. No data')
 else:
-    print('ISS is over ' + g.state_long + ', ' + g.country_long + 'and the nearest city is ' + g.city)
+    print('ISS is over ' + g.state_long + ', ' + g.country_long + ' ' + 'and the nearest city is ' + g.city)
