@@ -10,8 +10,7 @@ Time = time.strftime("%H:%M")
 #Validate timeinput
 def timevalidate(Alarm):
     try:
-        datetime.datetime.strptime(Alarm, "%H:%M")
-        return True
+        Time = datetime.datetime.strptime(Alarm, "%H:%M")
     except ValueError:
         raise ValueError("Incorrect Time Format or invalid time. Must be in H:M")
         return False
@@ -21,8 +20,8 @@ def createYT():
     try:
         if os.path.isfile("/tmp/YT.txt") == False:
             flags = os.O_CREAT | os.O_EXCL | os.O_WRONLY
-            filecreate = os.open("YT.txt", flags)
-            with open("YT.txt", "wb") as f:
+            filecreate = os.open("/tmp/YT.txt", flags)
+            with open("/tmp/YT.txt", "wb") as f:
                 f.write("https://youtu.be/BZg8BhBWyo8")
     except:
         return
@@ -32,20 +31,25 @@ def main():
     print ("Use this form.\nExample: 06:30")
     Alarm = raw_input("> ")
     timevalidate(Alarm)
+
     with open("/tmp/YT.txt") as f:
         content = f.readlines()
-    Time = time.strftime("%H:%M:%S")
+    Time = time.strftime("%H:%M")
 
-    while Time != Alarm:
-        Time = time.strftime("%H:%M:%S")
-        print "The time is " + Time
-        time.sleep(1)
+    if Alarm == Time:
+        print "Alarm cannot be set to current time"
+        exit()
+    else:
 
-        if Time == Alarm:
+        while Time != Alarm:
+            Time = time.strftime("%H:%M")
+            print "The time is " + Time
+            time.sleep(1)
 
-            print "Time to Wake up!"
-            random_video = random.choice(content)
-            webbrowser.open(random_video)
+            if Time == Alarm:
+                print "Time to Wake up!"
+                random_video = random.choice(content)
+                webbrowser.open(random_video)
 
 createYT()
 main()
