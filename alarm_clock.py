@@ -1,11 +1,22 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import time
+import datetime
 import webbrowser
 import random
 import os
 
 Time = time.strftime("%H:%M")
+#Validate timeinput
+def timevalidate(Alarm):
+    try:
+        datetime.datetime.strptime(Alarm, "%H:%M")
+        return True
+    except ValueError:
+        raise ValueError("Incorrect Time Format or invalid time. Must be in H:M")
+        return False
+#Create YT URL text file
 
-#create txt file with youtube URL
 def createYT():
     try:
         if os.path.isfile("/tmp/YT.txt") == False:
@@ -15,13 +26,13 @@ def createYT():
                 f.write("https://youtu.be/BZg8BhBWyo8")
     except:
         return
-
+#main function
 def main():
     print( "What time do you want to wake up?")
     print ("Use this form.\nExample: 06:30")
     Alarm = raw_input("> ")
-    #open file with YT link
-    with open("YT.txt") as f:
+    timevalidate(Alarm)
+    with open("i/tmp/YT.txt") as f:
         content = f.readlines()
     Time = time.strftime("%H:%M:%S")
 
@@ -30,21 +41,13 @@ def main():
         print "The time is " + Time
         time.sleep(1)
 
-        #If the Time variable is equal to the Alarm string, this code activates
         if Time == Alarm:
 
             print "Time to Wake up!"
-            #from the variable content, a random link is chosen and then that link is stored in random_video variable
             random_video = random.choice(content)
-            #Using the webbrowser library, it opens this youtube video link.
-            #The videos are varius aphex twin songs
             webbrowser.open(random_video)
 
 createYT()
 main()
 
-
-
-
-#When the Time does not equal the Alarm time string given above, print the time
 
