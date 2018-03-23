@@ -12,7 +12,7 @@ def timevalidate(Alarm):
     try:
         Time = datetime.datetime.strptime(Alarm, "%H:%M")
     except ValueError:
-        raise ValueError("Incorrect Time Format or invalid time. Must be in H:M")
+        raise ValueError("Incorrect Time Format or invalid time. Must be in HH:M")
         return False
 #Create YT URL text file
 
@@ -43,7 +43,8 @@ def main():
 
         while Time != Alarm:
             Time = time.strftime("%H:%M")
-            print "The time is " + Time
+            seconds = time.strftime("%H:%M:%S")
+            print "The time is " + seconds
             time.sleep(1)
 
             if Time == Alarm:
