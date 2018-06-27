@@ -97,7 +97,9 @@ nmap <F8> :TagbarToggle<CR>
 Plugin 'sheerun/vim-polyglot'
 ""Themes/Colourschemes
 Plugin 'flazz/vim-colorschemes'
+
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
