@@ -1,30 +1,10 @@
-set background=dark
-set t_Co=256
-set synmaxcol=2048
-"":set clipboard^=unnamed
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" " Copy to clipboard
-vnoremap  <leader>y  "+y
-nnoremap  <leader>Y  "+yg_
-nnoremap  <leader>y  "+y
-nnoremap  <leader>yy  "+yy
-
-" " Paste from clipboard
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>p "+p
-vnoremap <leader>P "+P
-
-
-"f5 to execute
-nnoremap <silent> <F5> :!python %<CR>
-colorscheme molokai
-set nocompatible
-""Vundle config start
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 set visualbell
 set pastetoggle=<F10>
 ""save with \s
@@ -101,9 +81,33 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 
+
+" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+
+
+set background=dark
+set t_Co=256
+set synmaxcol=2048
+"":set clipboard^=unnamed
+
+
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
 let g:AutoClosePreserveDotReg = 0
-"""" END Vundle Configuration 
-
-
+"f5 to execute
+nnoremap <silent> <F5> :!python %<CR>
+colorscheme molokai
+set nocompatible
