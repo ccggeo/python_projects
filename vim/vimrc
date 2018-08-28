@@ -1,3 +1,6 @@
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
+
 set background=dark
 set t_Co=256
 set synmaxcol=2048
@@ -19,7 +22,7 @@ vnoremap <leader>P "+P
 
 "f5 to execute
 nnoremap <silent> <F5> :!python %<CR>
-colorscheme monokai
+""colorscheme monokai
 set nocompatible
 ""Vundle config start
 filetype off
@@ -33,7 +36,6 @@ noremap <Leader>s :update<CR>
 " For GitHub repos, you specify plugins using the
 " 'user/repository' format
 Plugin 'gmarik/vundle'
-
 
 " We could also add repositories with a ".git" extension
 
@@ -103,6 +105,11 @@ Plugin 'chriskempson/base16-vim'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'tpope/vim-fugitive'
+Plugin 'nvie/vim-flake8'
+Bundle 'vim-ruby/vim-ruby'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
