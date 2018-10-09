@@ -25,6 +25,9 @@ nnoremap <silent> <F5> :!python %<CR>
 :nmap <c-q> :q!<CR>
 set pastetoggle=<F10>
 
+" new tab ctrl-t
+:nmap <c-t> :tabe<CR>
+
 ""NERDTREE F2 to open and close
 map <F2> :NERDTreeToggle<CR>
 map  <C-l> :tabn<CR>
@@ -82,6 +85,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
 Plugin 'nvie/vim-flake8'
 Bundle 'vim-ruby/vim-ruby'
+Plugin 'xmledit'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
